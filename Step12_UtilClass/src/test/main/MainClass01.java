@@ -11,7 +11,7 @@ public class MainClass01 {
 	public static void main(String[] args) {
 		// String type을 저장할 수 있는 ArrayList 객체를 생성해서 참조값을 names에 담기
 		/*
-		 * ArrayList<String> names = new ArrayList<>();
+		ArrayList<String> names = new ArrayList<>();
 		names.add("Ko");
 		names.add("kahyun");
 		names.add("Ko Kahyun");

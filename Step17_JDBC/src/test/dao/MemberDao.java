@@ -60,11 +60,16 @@ public class MemberDao {
 			// Connection 객체의 참조값 얻어오기
 			conn = new DBConnect().getConn();
 			// 실행할 sql문
-			String sql = "";
+			String sql = "UPDATE member"
+					+ " SET name = ?, addr = ? "
+					+ " WHERE num = ?";
 			
 			// sql 문을 대신 실행해 줄 PreparedStatement 객체의 참조값 얻어오기
 			pstmt = conn.prepareStatement(sql);
 			// sql 문이 ?가 존재하는 미완성이라면 여기서 완성한다.
+			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getAddr());
+			pstmt.setInt(3, dto.getNum());
 			
 			
 			// insert or update of delete 문을 실제 수행, 변화된 row의 갯수가 리턴된다.
